@@ -10,6 +10,11 @@ const StyledCounterCard =  styled.View`
     flex-direction: column;
     padding: 15px;
     margin: 20px;
+    elevation: 5;
+    shadow-color: #000;
+    shadow-offset: 0px 2px;
+    shadow-opacity: 0.5;
+    shadow-radius: 3.80px;
 `
 
 const CounterCard = ({ index, selected, onPress, value })  => {

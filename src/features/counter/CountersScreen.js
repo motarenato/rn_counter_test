@@ -26,12 +26,10 @@ const CountersScreen = () => {
         <SafeAreaView style={{flex: 1, backgroundColor: '#001c46'}}>
             <StyledCountersScreen>
                 <Header title="Counters" />
-                <If condition={counters.length === 0}>
-                    <EmptyState />
-                </If>
-                <If condition={counters.length > 0}>
                 <FlatList
+                    ListEmptyComponent={<EmptyState />}
                     data={counters}
+                    contentContainerStyle={{ flexGrow: 1 }}
                     renderItem={({item, index}) => (
                         <CounterCard
                             index={index+1}
@@ -42,7 +40,6 @@ const CountersScreen = () => {
                         )}
                     keyExtractor={item => item.id}
                 />
-                </If>
             </StyledCountersScreen>
         </SafeAreaView>
     )
